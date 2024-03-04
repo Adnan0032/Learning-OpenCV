@@ -1,0 +1,11 @@
+from PIL import Image
+pil_im = Image.open('python.png')
+pil_im = Image.open('python.png').convert('L')
+pil_im.thumbnail((500,500))
+box = (100,100,400,400)
+region = pil_im.crop(box)
+region = region.transpose(Image.ROTATE_180)
+#pil_im.paste(region,box)
+out = pil_im.resize((500,500))
+out = pil_im.rotate(45)
+out.show()
